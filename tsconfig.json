@@ -16,8 +16,8 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"],
-      "@ui/*": ["../../packages/ui/*"],
-      "@brand/*": ["../../packages/brand-tokens/*"],
+      "@ui/*": ["./packages/ui/*"],
+      "@brand/*": ["./packages/brand-tokens/*"],
       "react": ["./node_modules/@types/react"],
       "react/*": ["./node_modules/@types/react/*"],
       "next/link": ["./node_modules/next/dist/client/link"],
@@ -30,9 +30,9 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "../../packages/ui/**/*.ts",
-    "../../packages/ui/**/*.tsx",
-    "../../packages/brand-tokens/**/*.ts"
+    "./packages/ui/**/*.ts",
+    "./packages/ui/**/*.tsx",
+    "./packages/brand-tokens/**/*.ts"
   ],
   "exclude": ["node_modules"]
 }
