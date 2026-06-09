@@ -13,8 +13,8 @@ const nextConfig = {
     // Resolve @ui and @brand aliases to packages directory
     config.resolve.alias = {
       ...config.resolve.alias,
-      '@ui': path.resolve(__dirname, '../../packages/ui'),
-      '@brand': path.resolve(__dirname, '../../packages/brand-tokens'),
+      '@ui': path.resolve(__dirname, './packages/ui'),
+      '@brand': path.resolve(__dirname, './packages/brand-tokens'),
     };
 
     // Allow packages/ui to resolve its dependencies from this site's node_modules
