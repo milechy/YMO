@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: #F0EDE7;
+    color: #0A0A0A;
+    -webkit-font-smoothing: none;
+    -moz-osx-font-smoothing: auto;
+  }
+
+  ::selection {
+    background-color: #FFE100;
+    color: #0A0A0A;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Dotted divider (siberia.es style) */
+  .border-dotted-custom {
+    border-bottom: 1px dotted currentColor;
+  }
+
+  /* Ticker pause on hover */
+  .ticker-wrap:hover .ticker-track {
+    animation-play-state: paused;
+  }
+}
