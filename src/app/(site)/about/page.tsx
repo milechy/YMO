@@ -45,9 +45,19 @@ export default function AboutPage() {
           >
             私たちに<br />ついて
           </h1>
-          <p className="mt-5 text-brand-gray text-sm leading-relaxed max-w-lg">
-            広告を通じて、ビジネスの可能性を広げる。それが私たちの使命です。
-          </p>
+          <div className="mt-8 space-y-6 max-w-lg">
+            {[
+              { en: '01 There Is No Default.', ja: '正解は最初から存在しない。広告もSNSも、昨日の成功が今日の正解とは限らない。私たちは常にゼロから考える。' },
+              { en: '02 Attention Is Earned.', ja: '関心は買うものではなく、獲得するもの。広告費だけでは人は動かない。人が反応する理由を設計する。' },
+              { en: '03 Small Can Move Big.', ja: '小さな挑戦が、大きな市場を動かす。予算の大きさではなく、アイデアと実行力が結果を変える。' },
+              { en: '04 Turn It On.', ja: '動かなければ、始まらない。ブランドも、人も、市場も。最初の一歩を生み出すことが私たちの仕事。' },
+            ].map((item) => (
+              <div key={item.en} className="border-l-2 border-brand-black pl-5">
+                <p className="font-mono text-[10px] tracking-[0.25em] text-brand-black mb-1">{item.en}</p>
+                <p className="text-brand-gray text-sm leading-relaxed">{item.ja}</p>
+              </div>
+            ))}
+          </div>
         </AnimatedSection>
       </section>
 
@@ -64,21 +74,19 @@ export default function AboutPage() {
               className="font-black text-brand-black leading-tight mb-8"
               style={{ fontSize: 'clamp(24px, 3.5vw, 48px)' }}
             >
-              「もっと結果が出る<br />広告があるはずだ」
+              「成果を出すシステム」と<br />「今の時代を動かすチカラ」。
             </p>
             <div className="space-y-4 text-brand-gray text-sm leading-relaxed">
               <p>
-                創業者は、大手広告代理店での10年間で1つの課題に直面し続けました。
-                「良いクリエイティブをつくっても、運用がずれると成果が出ない。運用を最適化しても、素材が弱いと限界がある」。
+                YMOは、人の関心を動かし、<br />
+                信頼を生み、<br />
+                行動へつなげるための広告代理店です。
               </p>
               <p>
-                戦略・クリエイティブ・運用が分断されたまま進む広告業界の構造に疑問を持ち、
-                2020年、すべてを一気通貫で担う会社としてYMO Yield Media Onlineを設立しました。
+                SNS広告、デジタルマーケティング、メディア設計——<br />
+                ブランドの可能性をONにする。
               </p>
-              <p>
-                以来、300社以上の企業の広告戦略に携わり、データと創造性を掛け合わせた独自メソッドで
-                確かな成果を積み上げてきました。
-              </p>
+              <p className="font-mono tracking-[0.2em] text-brand-black">Turn it On.</p>
             </div>
           </AnimatedSection>
           <AnimatedSection delay={150} direction="left">
@@ -122,12 +130,12 @@ export default function AboutPage() {
               className="font-black text-brand-yellow leading-tight mb-8"
               style={{ fontSize: 'clamp(20px, 2.8vw, 36px)' }}
             >
-              「広告は、ビジネスを<br />変える力を持っている。」
+              広告は、情報を届けるためにあるのではない。<br />人を動かすためにある。
             </p>
             <div className="space-y-4 text-brand-gray text-sm leading-relaxed">
-              <p>正しい戦略と、磨かれたクリエイティブと、データに基づいた改善が揃ったとき、広告は単なるコストから、最強の武器へと変わります。</p>
-              <p>私たちは、その3つをすべて自社内で完結させることにこだわってきました。外注が多い業界の慣習を覆し、スピードとクオリティを両立させるためです。</p>
-              <p>どんな規模の会社にも、どんな業種にも、成果を出せる広告の形があると信じています。ぜひ、一緒に見つけましょう。</p>
+              <p>どれだけ多くの人に届いたかではなく、どれだけ人の心を動かしたか。それが本当の価値だと、私たちは考えています。</p>
+              <p>市場は変わり続けています。SNSが生まれ、動画が主流となり、AIが日常になろうとしている今、昨日の成功が明日の成功を保証する時代ではありません。だからこそ私たちは、過去の正解に頼らず、今の時代に必要な方法を常に問い続けます。</p>
+              <p>人を動かす。<br />ブランドを動かす。<br />市場を動かす。<br />その最初のスイッチを入れること。それがYMOの役割です。</p>
             </div>
           </AnimatedSection>
         </div>
@@ -162,8 +170,9 @@ export default function AboutPage() {
         </div>
       </section>
 
+
       {/* ─── Timeline ─── */}
-      <section className="bg-brand-black px-8 md:px-10 py-20">
+      <section className="hidden bg-brand-black px-8 md:px-10 py-20">
         <AnimatedSection>
           <div className="flex items-end justify-between mb-12 border-b border-brand-border pb-6">
             <p className="font-mono text-[10px] tracking-[0.4em] text-brand-yellow uppercase">History</p>

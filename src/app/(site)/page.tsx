@@ -6,7 +6,7 @@ import { BlogCard } from '@ui/BlogCard';
 import { GRADIENTS } from '@/lib/gradients';
 
 export const metadata: Metadata = {
-  title: '広告を、武器に。| YMO Yield Media Online',
+  title: 'Turn It On. | YMO Yield Media Online',
 };
 
 const services = [
@@ -105,17 +105,14 @@ export default function HomePage() {
             className="font-black text-brand-black leading-[0.92] tracking-tight"
             style={{ fontSize: 'clamp(56px, 11vw, 160px)' }}
           >
-            広告を、
-            <br />
-            武器に。
+            Turn It On.
           </h1>
         </div>
 
         {/* Bottom row */}
         <div className="flex flex-col sm:flex-row items-start sm:items-end justify-between gap-6 px-8 md:px-10 pb-10">
           <p className="text-brand-gray text-sm leading-relaxed max-w-xs">
-            戦略からクリエイティブまで、<br />
-            貴社のビジネスを次のステージへ。
+            ブランドの可能性を、オンにする。
           </p>
           <div className="flex gap-3">
             <Link

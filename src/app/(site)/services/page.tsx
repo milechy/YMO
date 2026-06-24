@@ -16,7 +16,7 @@ const services = [
     subtitle: 'Ad Management',
     description: 'Google広告・Meta広告・LINE広告・Yahoo!広告など主要プラットフォームを一括管理。戦略設計から日次運用・レポーティングまでを担当し、データに基づいたPDCAサイクルで広告費対効果（ROAS）を継続的に改善します。',
     features: ['アカウント診断・戦略立案', 'キャンペーン設計・入稿', '入札戦略の継続最適化', 'クリエイティブA/Bテスト', '月次レポート・改善提案', 'LPとの連動改善'],
-    metric: '平均CPA -45%',
+    metric: '平均CPA -45%' as string | null,
     gradient: GRADIENTS[0],
     dark: false,
   },
@@ -27,7 +27,7 @@ const services = [
     subtitle: 'Creative Production',
     description: '動画広告・バナー・静止画・コピーライティングまで、クリエイティブ制作をワンストップで対応。運用データを基に「刺さる」クリエイティブを設計し、CTR・CVRを改善します。',
     features: ['広告コピーライティング', 'バナー・静止画制作', '動画広告制作（15秒〜60秒）', 'リール・ショート動画制作', 'A/Bテスト素材の量産', 'ブランドガイドライン準拠対応'],
-    metric: '平均CTR +120%',
+    metric: null,
     gradient: GRADIENTS[1],
     dark: true,
   },
@@ -38,7 +38,7 @@ const services = [
     subtitle: 'Web Production',
     description: 'コンバージョン設計を起点に、LP・コーポレートサイト・ECサイトを制作します。デザインから実装・CMS構築・公開後の改善まで、一気通貫で対応。',
     features: ['CVR最適化設計', 'LP / コーポレートサイト制作', 'ECサイト構築', 'CMS実装（WordPress/Headless）', '表示速度最適化（Core Web Vitals）', 'A/Bテスト設計・分析'],
-    metric: '平均CVR +85%',
+    metric: null,
     gradient: GRADIENTS[2],
     dark: false,
   },
@@ -49,7 +49,7 @@ const services = [
     subtitle: 'Social Media Marketing',
     description: 'Instagram・X・TikTok・YouTubeのアカウント戦略から投稿制作・コメント管理・インフルエンサー施策まで、SNS運用を丸ごとお任せいただけます。',
     features: ['SNS戦略・アカウント設計', 'コンテンツカレンダー作成', '投稿制作（画像・動画・テキスト）', 'コメント・DM管理', 'インフルエンサーキャスティング', '月次分析レポート'],
-    metric: '平均フォロワー増加率 +350%',
+    metric: null,
     gradient: GRADIENTS[3],
     dark: true,
   },
@@ -60,7 +60,7 @@ const services = [
     subtitle: 'SEO & Content Marketing',
     description: '検索エンジンで上位表示を獲得するためのコンテンツ戦略・記事制作・内部SEO施策を提供します。広告費をかけずに継続的なオーガニック流入を実現します。',
     features: ['サイト診断・SEO監査', 'キーワード戦略設計', 'SEO記事・コンテンツ制作', '内部リンク・サイト構造最適化', 'テクニカルSEO対応', '競合分析・差別化戦略'],
-    metric: '平均オーガニック流入 +240%',
+    metric: null,
     gradient: GRADIENTS[0],
     dark: false,
   },
@@ -115,9 +115,11 @@ export default function ServicesPage() {
               <p className={`text-sm leading-relaxed mb-8 ${service.dark ? 'text-brand-gray' : 'text-brand-gray'}`}>
                 {service.description}
               </p>
-              <div className="inline-block px-5 py-2.5" style={{ background: service.gradient }}>
-                <span className="font-mono text-brand-black text-xs font-bold tracking-wider">{service.metric}</span>
-              </div>
+              {service.metric && (
+                <div className="inline-block px-5 py-2.5" style={{ background: service.gradient }}>
+                  <span className="font-mono text-brand-black text-xs font-bold tracking-wider">{service.metric}</span>
+                </div>
+              )}
             </AnimatedSection>
 
             <AnimatedSection delay={150} direction="left">
