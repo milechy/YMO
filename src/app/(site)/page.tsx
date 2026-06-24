@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { AnimatedSection } from '@ui/AnimatedSection';
 import { CTASection } from '@ui/CTASection';
-import { BlogCard } from '@ui/BlogCard';
 import { GRADIENTS } from '@/lib/gradients';
 
 export const metadata: Metadata = {
@@ -264,27 +263,37 @@ export default function HomePage() {
       </section>
 
       {/* ═══════════════════════════════════════
-          NEWS — cream, dotted list
+          NEWS — 準備中
       ═══════════════════════════════════════ */}
-      <section className="bg-brand-cream py-20 px-8 md:px-10">
-        <AnimatedSection>
-          <div className="flex items-end justify-between mb-12 border-b border-brand-black/10 pb-6">
-            <p className="font-mono text-[10px] tracking-[0.4em] text-brand-gray uppercase">News</p>
-            <Link
-              href="/news"
-              className="font-mono text-[10px] tracking-[0.3em] text-brand-gray hover:text-brand-black transition-colors uppercase"
-            >
-              すべて見る →
-            </Link>
+      <section className="bg-brand-black py-20 px-8 md:px-10 relative overflow-hidden">
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            backgroundImage:
+              'linear-gradient(rgba(255,225,0,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,225,0,0.03) 1px, transparent 1px)',
+            backgroundSize: '80px 80px',
+          }}
+        />
+        <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none">
+          <span className="font-display text-[18vw] text-brand-border leading-none">NEWS</span>
+        </div>
+        <AnimatedSection className="relative text-center max-w-xl mx-auto py-12">
+          <p className="font-mono text-[10px] tracking-[0.4em] text-brand-yellow mb-8 uppercase">News</p>
+          <div className="font-display text-brand-yellow mb-6" style={{ fontSize: 'clamp(48px, 7vw, 90px)' }}>
+            準備中
           </div>
+          <p className="text-brand-white text-base font-bold mb-3">ニュースページは近日公開予定です。</p>
+          <p className="text-brand-gray text-sm leading-relaxed">
+            お問い合わせは、お問い合わせフォームよりお気軽にご連絡ください。
+          </p>
         </AnimatedSection>
-        <AnimatedSection delay={150}>
-          <div>
-            {news.map((item) => (
-              <BlogCard key={item.href} {...item} onDark={false} />
-            ))}
-          </div>
-        </AnimatedSection>
+
+        {/* hidden: existing articles */}
+        <div className="hidden">
+          {news.map((item) => (
+            <div key={item.href} />
+          ))}
+        </div>
       </section>
 
       {/* ═══════════════════════════════════════
